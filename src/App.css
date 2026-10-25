@@ -1083,3 +1083,68 @@ button {
     padding: 24px 16px;
   }
 }
+
+
+.rsvp-section {
+  padding: 70px 20px;
+  text-align: center;
+  background: #f8f6f0;
+}
+
+.rsvp-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 3px;
+  color: #9b8150;
+}
+
+.rsvp-section h2 {
+  margin: 14px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  color: #52624e;
+}
+
+.rsvp-message {
+  max-width: 460px;
+  margin: 0 auto 28px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #77766d;
+}
+
+.rsvp-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 50px;
+}
+
+.rsvp-contact p {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.rsvp-contact span {
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: #9b8150;
+}
+
+.rsvp-contact strong {
+  font-weight: 500;
+  color: #52624e;
+}
+
+@media (max-width: 600px) {
+  .rsvp-section {
+    padding: 50px 20px;
+  }
+
+  .rsvp-contact {
+    flex-direction: column;
+    gap: 22px;
+  }
+}

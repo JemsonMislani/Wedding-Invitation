@@ -487,6 +487,29 @@ function App() {
           </a>
         </section>
       </main>
+      
+      <section className="rsvp-section" id="rsvp">
+        <span className="rsvp-eyebrow">KINDLY RESPOND</span>
+
+        <h2>We Hope to See You There</h2>
+
+        <p className="rsvp-message">
+          Kindly confirm your attendance at least one week
+          before the wedding.
+        </p>
+
+        <div className="rsvp-contact">
+          <p>
+            <span>Facebook Account</span>
+            <strong>Yhu-la Mislani</strong>
+          </p>
+
+          <p>
+            <span>Contact Number</span>
+            <strong>0952-550-6750</strong>
+          </p>
+        </div>
+</section>
 
       <footer className="site-footer">
         <a href="#home" className="footer-monogram">S & M</a>
