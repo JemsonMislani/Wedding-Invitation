@@ -254,7 +254,7 @@ function App() {
         <section className="about section-padding" id="about">
           <div className="about-image">
             <img
-              src="public/WeddingImage.jpg"
+              src="/WeddingImage.jpg"
               alt="Romantic wedding ceremony surrounded by flowers"
               loading="lazy"
             />
