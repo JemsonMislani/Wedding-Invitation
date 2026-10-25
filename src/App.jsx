@@ -60,7 +60,7 @@ const entourage = {
     ["Wilma Valenzuela", "Leo Valenzuela (Bride Sponsors)"],
     ["Lucinio Villon Jr.", "Peruza Villon (Bride Sponsors)"],
     ["Melanie Akim", "Benjie Akim (Bride Sponsors)"],
-    ["Fatima Corpuz", "Deenuel Boro (Groom Sponsors)"],
+    ["Fatma Corpuz", "Deenuel Boro (Groom Sponsors)"],
     ["JB Brizuela", "Janet Isanan (Groom Sponsors)"],
   ],
 };
@@ -280,7 +280,7 @@ function App() {
               forever and choosing each other, every single day.
             </p>
 
-            <p className="signature">With love, Sandrex & Mayann</p>
+            <p className="signature">With love, Sandrex & May Ann</p>
           </div>
         </section>
 
@@ -491,7 +491,7 @@ function App() {
       <footer className="site-footer">
         <a href="#home" className="footer-monogram">S & M</a>
         <p>MADE WITH LOVE, FOR A LOVE THAT LASTS FOREVER.</p>
-        <span>© 2026 · Sandrex & Mayann Wedding</span>
+        <span>© 2026 · Sandrex & May Ann Wedding</span>
         <p className="developer-credit">
           Design & Developed by <span>Jemson Mislani</span>
         </p>
