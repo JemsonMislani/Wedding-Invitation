@@ -68,7 +68,7 @@ const entourage = {
 const brideGuests = [
   "Thadzmahal Abdulla",
   "Cherry Ulanimo",
-  "Danica Moroña",
+  "Danica Maraña",
   "Buenafe Rellora",
   "Marjoelyn Palomares",
   "Regina Mislani",
@@ -254,7 +254,7 @@ function App() {
         <section className="about section-padding" id="about">
           <div className="about-image">
             <img
-              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+              src="public/WeddingImage.jpg"
               alt="Romantic wedding ceremony surrounded by flowers"
               loading="lazy"
             />
@@ -280,7 +280,7 @@ function App() {
               forever and choosing each other, every single day.
             </p>
 
-            <p className="signature">With love, May-ann & Sandrex</p>
+            <p className="signature">With love, Sandrex & Mayann</p>
           </div>
         </section>
 
@@ -491,7 +491,7 @@ function App() {
       <footer className="site-footer">
         <a href="#home" className="footer-monogram">S & M</a>
         <p>MADE WITH LOVE, FOR A LOVE THAT LASTS FOREVER.</p>
-        <span>© 2026 · Sandrex & May-ann WEDDING</span>
+        <span>© 2026 · Sandrex & Mayann Wedding</span>
         <p className="developer-credit">
           Design & Developed by <span>Jemson Mislani</span>
         </p>
