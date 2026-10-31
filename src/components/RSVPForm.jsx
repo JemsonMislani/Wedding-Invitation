@@ -4,111 +4,170 @@ import "./RSVPForm.css";
 const RSVPForm = () => {
   const [fullName, setFullName] = useState("");
   const [attendanceStatus, setAttendanceStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/rsvp`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          full_name: fullName,
-          attendance_status: attendanceStatus,
-        }),
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/rsvp`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            full_name: fullName,
+            attendance_status: attendanceStatus,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message || "Unable to submit RSVP.");
+        return;
       }
-    );
 
-    const data = await response.json();
+      setFullName("");
+      setAttendanceStatus("");
+      setShowSuccess(true);
 
-    if (!response.ok) {
-      alert(data.message || "Unable to submit RSVP.");
-      return;
+    } catch (error) {
+      console.error("RSVP submission error:", error);
+      alert("Unable to connect to the server. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
+  };
 
-    alert("Your RSVP has been submitted successfully!");
+  return (
+    <section className="rsvp-section">
+      <div className="rsvp-container">
+        <p className="rsvp-subtitle">S & M</p>
 
-    setFullName("");
-    setAttendanceStatus("");
-  } catch (error) {
-    console.error("RSVP submission error:", error);
-    alert("Unable to connect to the server. Please try again.");
-  }
-};
+        <h2>Kindly Respond</h2>
 
-return (
-  <section className="rsvp-section">
-    <div className="rsvp-container">
-      <p className="rsvp-subtitle">S & M</p>
+        <p className="rsvp-description">
+          We would be delighted to celebrate this special day with you.
+          Kindly let us know if you can join us.
+        </p>
 
-      <h2>Kindly Respond</h2>
+        <form onSubmit={handleSubmit} className="rsvp-form">
+          <div className="rsvp-field">
+            <label htmlFor="fullName">Full Name</label>
 
-      <p className="rsvp-description">
-        We would be delighted to celebrate this special day with you.
-        Kindly let us know if you can join us.
-      </p>
+            <input
+              id="fullName"
+              type="text"
+              placeholder="Enter your full name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+              maxLength={150}
+              disabled={isSubmitting}
+            />
+          </div>
 
-      <form onSubmit={handleSubmit} className="rsvp-form">
-        <div className="rsvp-field">
-          <label htmlFor="fullName">Full Name</label>
+          <div className="rsvp-field">
+            <label>Will you be joining us?</label>
 
-          <input
-            id="fullName"
-            type="text"
-            placeholder="Enter your full name"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            required
-            maxLength={150}
-          />
-        </div>
+            <div className="rsvp-options">
+              <label
+                className={`rsvp-option ${
+                  attendanceStatus === "attending" ? "selected" : ""
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="attending"
+                  checked={attendanceStatus === "attending"}
+                  onChange={(e) => setAttendanceStatus(e.target.value)}
+                  required
+                  disabled={isSubmitting}
+                />
 
-        <div className="rsvp-field">
-          <label>Will you be joining us?</label>
+                <span>Joyfully Accepts</span>
+                <small>Yes, I will attend</small>
+              </label>
 
-          <div className="rsvp-options">
-            <label className={`rsvp-option ${attendanceStatus === "attending" ? "selected" : ""}`}>
-              <input
-                type="radio"
-                name="attendance"
-                value="attending"
-                checked={attendanceStatus === "attending"}
-                onChange={(e) => setAttendanceStatus(e.target.value)}
-                required
-              />
-              <span>Joyfully Accepts</span>
-              <small>Yes, I will attend</small>
-            </label>
+              <label
+                className={`rsvp-option ${
+                  attendanceStatus === "not_attending" ? "selected" : ""
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="not_attending"
+                  checked={attendanceStatus === "not_attending"}
+                  onChange={(e) => setAttendanceStatus(e.target.value)}
+                  disabled={isSubmitting}
+                />
 
-            <label className={`rsvp-option ${attendanceStatus === "not_attending" ? "selected" : ""}`}>
-              <input
-                type="radio"
-                name="attendance"
-                value="not_attending"
-                checked={attendanceStatus === "not_attending"}
-                onChange={(e) => setAttendanceStatus(e.target.value)}
-              />
-              <span>Regretfully Declines</span>
-              <small>Sorry, I can't attend</small>
-            </label>
+                <span>Regretfully Declines</span>
+                <small>Sorry, I can't attend</small>
+              </label>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="rsvp-submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
+          </button>
+
+          <p className="rsvp-deadline">
+            Kindly respond before December 22, 2026.
+          </p>
+        </form>
+      </div>
+
+      {showSuccess && (
+        <div
+          className="rsvp-modal-overlay"
+          role="presentation"
+          onClick={() => setShowSuccess(false)}
+        >
+          <div
+            className="rsvp-success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="rsvp-success-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="rsvp-success-icon">✓</div>
+
+            <p className="rsvp-success-subtitle">S & M</p>
+
+            <h2 id="rsvp-success-title">Thank You!</h2>
+
+            <p>
+              Your response has been successfully recorded.
+              We truly appreciate your time and confirmation.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setShowSuccess(false)}
+            >
+              CLOSE
+            </button>
           </div>
         </div>
-
-        <button type="submit" className="rsvp-submit">
-          Submit
-        </button>
-
-        <p className="rsvp-deadline">
-          Kindly respond before December 22, 2026.
-        </p>
-      </form>
-    </div>
-  </section>
-);
+      )}
+    </section>
+  );
 };
 
 export default RSVPForm;

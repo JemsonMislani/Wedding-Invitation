@@ -190,3 +190,114 @@
     min-height: 95px;
   }
 }
+
+```css
+/* RSVP Success Modal */
+
+.rsvp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(40, 33, 27, 0.58);
+  animation: rsvpFadeIn 0.25s ease;
+}
+
+.rsvp-success-modal {
+  width: 100%;
+  max-width: 420px;
+  padding: 45px 35px;
+  background: #fffdf9;
+  border: 1px solid #e8dfd2;
+  text-align: center;
+  animation: rsvpModalIn 0.3s ease;
+}
+
+.rsvp-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 20px;
+  border: 1px solid #ad9675;
+  border-radius: 50%;
+  color: #a58b68;
+  font-size: 26px;
+}
+
+.rsvp-success-subtitle {
+  margin: 0 0 12px;
+  color: #aa9270;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  letter-spacing: 5px;
+}
+
+.rsvp-success-modal h2 {
+  margin: 0 0 15px;
+  color: #51483f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.rsvp-success-modal p:not(.rsvp-success-subtitle) {
+  margin: 0 auto 25px;
+  color: #898078;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.rsvp-success-modal button {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #a58b68;
+  background: #a58b68;
+  color: #fff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.rsvp-success-modal button:hover {
+  background: #887253;
+  border-color: #887253;
+}
+
+.rsvp-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@keyframes rsvpFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rsvpModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .rsvp-success-modal {
+    padding: 38px 25px;
+  }
+}
+```
