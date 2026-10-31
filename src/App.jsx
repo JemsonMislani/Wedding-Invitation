@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminDashboard from "./pages/AdminDashboard";
+import RSVPForm from "./components/RSVPForm";
 
 const WEDDING_DATE = new Date("2026-12-29T15:00:00+08:00");
 
@@ -128,7 +131,7 @@ function NameList({ names }) {
   );
 }
 
-function App() {
+function WeddingHome() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [timeLeft, setTimeLeft] = useState(getTimeLeft);
 
@@ -488,28 +491,7 @@ function App() {
         </section>
       </main>
       
-      <section className="rsvp-section" id="rsvp">
-        <span className="rsvp-eyebrow">KINDLY RESPOND</span>
-
-        <h2>We Hope to See You There</h2>
-
-        <p className="rsvp-message">
-          Kindly confirm your attendance at least one week
-          before the wedding.
-        </p>
-
-        <div className="rsvp-contact">
-          <p>
-            <span>Facebook Account</span>
-            <strong>Yhu-la Mislani</strong>
-          </p>
-
-          <p>
-            <span>Contact Number</span>
-            <strong>0952-550-6750</strong>
-          </p>
-        </div>
-</section>
+    <RSVPForm />
 
       <footer className="site-footer">
         <a href="#home" className="footer-monogram">S & M</a>
@@ -520,6 +502,17 @@ function App() {
         </p>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<WeddingHome />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
