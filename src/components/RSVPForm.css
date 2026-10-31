@@ -191,9 +191,6 @@
   }
 }
 
-```css
-/* RSVP Success Modal */
-
 .rsvp-modal-overlay {
   position: fixed;
   inset: 0;
@@ -300,4 +297,3 @@
     padding: 38px 25px;
   }
 }
-```
