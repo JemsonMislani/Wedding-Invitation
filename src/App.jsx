@@ -90,7 +90,8 @@ const groomGuests = [
   "Fedela Merilo",
   "Wanie Merilo",
   "Jennalyn Carbonilla",
-  "Arjay Merilo"
+  "Arjay Merilo",
+  "Jehan Mae Sabaco"
 ];
 
 
