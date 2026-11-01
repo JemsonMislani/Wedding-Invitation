@@ -1058,7 +1058,7 @@ button {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
   font-weight: 500;
-  color: #536B80;
+  color: #536B80 !important;
 }
 
 .parents-card p {
@@ -1370,24 +1370,6 @@ body {
   .nav-links {
     background: #FFFFFF;
   }
-}
-
-/* GOLD TEXT: ABOUT, ENTOURAGE, AND GUESTS */
-#about,
-#about *,
-#entourage,
-#entourage *,
-#guests,
-#guests * {
-  color: #C5A46D !important;
-}
-
-/* LIGHT GOLD BORDERS */
-#about *,
-#entourage *,
-#guests * {
-  border-color: rgba(197, 164, 109, 0.45) !important;
-  border-width: 1px !important;
 }
 
 /* FORCE AMPERSANDS TO GOLD */
