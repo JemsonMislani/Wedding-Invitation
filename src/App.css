@@ -1143,3 +1143,249 @@ button {
     gap: 22px;
   }
 }
+
+/* GENERAL TEXT */
+body {
+  color: #806B4D;
+}
+
+/* HEADER */
+.brand,
+.footer-monogram {
+  color: #294C70;
+}
+
+.brand span {
+  color: #C5A46D;
+}
+
+.nav-links a {
+  color: #806B4D;
+}
+
+.nav-links a:hover {
+  color: #C5A46D;
+}
+
+.menu-toggle {
+  color: #294C70;
+}
+
+/* HERO */
+.hero .eyebrow {
+  color: #E5C98F;
+}
+
+.hero h1 span,
+.hero-divider > span:not(.divider-heart),
+.divider-heart {
+  color: #E5C98F;
+}
+
+.hero-divider > span:not(.divider-heart) {
+  background: #E5C98F;
+}
+
+.hero .primary-button {
+  background: #F5EBD8;
+  color: #294C70;
+}
+
+.hero .primary-button:hover {
+  background: #DCEEFF;
+}
+
+/* BUTTONS */
+.primary-button {
+  background: #DCEEFF;
+  color: #294C70;
+}
+
+.primary-button:hover {
+  background: #C5DFF5;
+}
+
+/* SECTION LABELS AND DECORATIONS */
+.eyebrow,
+.flourish,
+.party-icon,
+.small-flourish,
+.detail-icon {
+  color: #C5A46D;
+}
+
+/* HEADINGS */
+.welcome h2,
+.about-content h2,
+.countdown h2,
+.details h2,
+.entourage > h2,
+.guests h2 {
+  color: #294C70;
+}
+
+.about-content h2 em,
+.signature {
+  color: #C5A46D;
+}
+
+/* ABOUT IMAGE BORDER */
+.about-image {
+  background: #E5F1FC;
+}
+
+.about-image::before {
+  border-color: #B8D3E9;
+}
+
+/* COUNTDOWN */
+.countdown {
+  background: #294C70;
+  color: #FFFFFF;
+}
+
+.countdown .eyebrow,
+.countdown .countdown-label {
+  color: #E5C98F;
+}
+
+/* WEDDING DETAILS */
+.detail-card {
+  background: #FFFFFF;
+  border-color: #D7E7F4;
+}
+
+.detail-card h3 {
+  color: #294C70;
+}
+
+.detail-muted {
+  color: #8B795F;
+}
+
+/* ENTOURAGE */
+.entourage {
+  background: #FFFFFF;
+}
+
+.party-card,
+.sponsor-card,
+.principal-card,
+.guest-card {
+  background: #F2F8FD;
+  border-color: #D7E7F4;
+}
+
+.party-card h3,
+.guest-card h3,
+.sponsor-heading h3,
+.sponsor-card h4 {
+  color: #294C70;
+}
+
+/* NAMES */
+.name-list li,
+.sponsor-couple span {
+  color: #806B4D;
+}
+
+.name-list li + li {
+  border-color: #DCEAF5;
+}
+
+.sponsor-couple span + span::before {
+  color: #83B5DC;
+}
+
+/* PARENTS */
+.parents-card {
+  background: #F2F8FD;
+  border-color: #C9DDED;
+}
+
+.parents-card h3 {
+  color: #C5A46D;
+}
+
+.parents-card p {
+  color: #806B4D;
+}
+
+/* GUESTS */
+.guest-card {
+  background: #F2F8FD;
+}
+
+.guest-note {
+  border-color: #C9DDED;
+}
+
+.guest-note span {
+  color: #C5A46D;
+}
+
+.guest-note p {
+  color: #294C70;
+}
+
+/* RSVP */
+.rsvp-section {
+  background: #F2F8FD;
+}
+
+.rsvp-eyebrow,
+.rsvp-contact span {
+  color: #C5A46D;
+}
+
+.rsvp-section h2,
+.rsvp-contact strong {
+  color: #294C70;
+}
+
+.rsvp-message {
+  color: #806B4D;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #E5F1FC;
+}
+
+.site-footer p,
+.site-footer > span {
+  color: #806B4D;
+}
+
+.developer-credit {
+  color: #806B4D;
+}
+
+.developer-credit span {
+  color: #C5A46D;
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 640px) {
+  .nav-links {
+    background: #FFFFFF;
+  }
+}
+
+/* GOLD TEXT: ABOUT, ENTOURAGE, AND GUESTS */
+#about,
+#about *,
+#entourage,
+#entourage *,
+#guests,
+#guests * {
+  color: #C5A46D !important;
+}
+
+/* LIGHT GOLD BORDERS */
+#about *,
+#entourage *,
+#guests * {
+  border-color: rgba(197, 164, 109, 0.45) !important;
+  border-width: 1px !important;
+}
