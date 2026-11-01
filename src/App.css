@@ -1389,3 +1389,13 @@ body {
   border-color: rgba(197, 164, 109, 0.45) !important;
   border-width: 1px !important;
 }
+
+/* FORCE AMPERSANDS TO GOLD */
+#about span,
+#entourage span,
+#guests span,
+#about span::before,
+#entourage span::before,
+#guests span::before {
+  color: #C5A46D !important;
+}
