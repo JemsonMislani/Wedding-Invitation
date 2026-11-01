@@ -1399,3 +1399,8 @@ body {
 #guests span::before {
   color: #C5A46D !important;
 }
+
+/* RESTORE COUNTDOWN HEADING */
+.countdown h2 {
+  color: #ffffff !important;
+}
